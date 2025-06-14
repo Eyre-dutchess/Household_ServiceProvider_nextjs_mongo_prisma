@@ -31,7 +31,7 @@ export const POST = async (request: Request,
 
 export const DELETE = async(request: Request, 
     {params}:{params:Promise<IParams>}
-) =>{
+) :Promise<NextResponse>  =>{
     const curUser = await getCurrentUser()
     if(!curUser){
         return NextResponse.json({ error: 'cant get current user' }, { status: 500 })
