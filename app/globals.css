@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+
+:root{
+    --background: hsl( 240 70% 35% /50%);
+    --foreground: hsl(24, 100%, 50%, 0.5) 
+}
+@layer base{
+    ::-webkit-scrollbar {
+        width: 10px;
+        height:10px;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: transparent;
+    }
+    ::-webkit-scrollbar-track:hover {
+        background: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+       background: hsl(240 ,70%, 35%, 0.5); 
+    }
+    input,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, 0) inset !important;
+        background-color: transparent !important;
+        background-clip: text;
+        }
+}
+@layer components{
+    .policy{
+        @apply px-4 py-14 md:px-[5vw] lg:px-[calc(5vw_+_2em)]  mt-10
+    }
+    .question-policy{
+         @apply px-4 py-14 md:px-[5vw]  mt-10
+    }
+    .policy h3, .question-policy h3{
+        @apply text-2xl md:text-3xl lg:text-5xl mb-2 font-bold text-blue-800/50 w-full md:text-center
+    };
+    .policy p{
+        @apply text-sm text-blue-800/75  md:text-base lg:text-lg md:text-center
+    }
+    .policy button{
+        @apply mt-14 max-w-[200px] md:mx-auto
+    }
+    .link-hover{
+        @apply hover:underline cursor-pointer transition hover:opacity-75
+    }
+    .next{
+        @apply translate-x-[90%] opacity-5
+    }
+    .prev{
+        @apply -translate-x-[90%] opacity-0    }
+    
+    .filter-btn{
+        @apply flex flex-row items-center justify-center  gap-2 px-3 border-r border-blue-800 cursor-pointer transition
+             text-blue-400/50 hover:text-white hover:rounded-md hover:bg-blue-400/75 hover:shadow hover:shadow-blue-200/50
+    }
+    .filter-option{
+        @apply overflow-hidden whitespace-nowrap flex flex-col absolute top-7 right-2 rounded-md bg-blue-400/25 text-blue-800 hover:text-white z-40 
+    }
+    .filter-option span{
+        @apply text-xs  w-full h-full font-light px-2 py-1  cursor-pointer hover:bg-blue-400/75 hover:shadow
+        }
+    .content span{
+        @apply  text-blue-400 px-2 border-b font-light
+    }
+    .review p{
+        @apply text-sm font-light text-blue-400/75
+    }
+}
+
