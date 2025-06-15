@@ -1,12 +1,13 @@
 "use client"
 
 import {  useSearchParams } from 'next/navigation'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import { SafeListing, SafeUser } from '../type'
 import { FeatureListing } from './mainpage/FeatureListing'
 import { Container } from './Container'
 import { CatoListing } from './mainpage/CatoListing'
+import Loading from '../loading'
 
 interface ListProps{
   listings?: SafeListing[] | null
@@ -30,7 +31,9 @@ export const MainSec = ({listings, currentUser}: ListProps) => {
     }
   return (
     <Container>
-        <CatoListing category={category} listings={listings} currentUser={currentUser}/>
+        <Suspense fallback={<Loading />}>
+          <CatoListing category={category} listings={listings} currentUser={currentUser}/>
+        </Suspense>
     </Container>
   )
 }
