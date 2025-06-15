@@ -1,4 +1,4 @@
-"user client"
+"use client"
 
 import { SafeListing } from '@/app/type'
 import Image from 'next/image'
