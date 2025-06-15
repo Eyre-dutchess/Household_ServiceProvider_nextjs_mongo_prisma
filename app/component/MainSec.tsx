@@ -31,7 +31,6 @@ export const MainSec = ({listings, currentUser}: ListProps) => {
   return (
     <Container>
         <CatoListing category={category} listings={listings} currentUser={currentUser}/>
-        
     </Container>
   )
 }
