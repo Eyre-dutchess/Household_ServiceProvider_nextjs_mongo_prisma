@@ -8,6 +8,7 @@ import { EmptyState } from "./component/EmptyState";
 import { Footer } from "./component/Footer";
 import { HeaderSec } from "./component/HeaderSec";
 import { MainSec } from "./component/MainSec";
+import Loading from "./loading";
 
 
 export default async function Home({params}: {params: Promise<ISearchParams>}) {
