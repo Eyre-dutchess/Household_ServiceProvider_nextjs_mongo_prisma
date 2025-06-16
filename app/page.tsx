@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { Suspense } from "react";
 import { getAllListings, ISearchParams } from "./action/getAllListings";
 import { getCurrentUser } from "./action/getCurrentUser";
@@ -10,7 +11,6 @@ import { MainSec } from "./component/MainSec";
 import Loading from "./loading";
 
 
-export const dynamic = 'force-dynamic';
 
 export default async function Home({params}: {params: Promise<ISearchParams>}) {
   const listings = await getAllListings(params)
